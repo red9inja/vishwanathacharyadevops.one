@@ -1,51 +1,88 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
 }
 
+/* Navigation */
 nav {
-    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
+/* Flash messages */
+.flash-message {
+    margin: 0 auto;
+    max-width: 90%;
 }
 
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.hero p {
-    font-size: 1.5rem;
-    max-width: 700px;
-}
-
+/* Call-to-action button */
 .btn-cta {
-    background: linear-gradient(90deg, #4f46e5, #7c3aed);
-    padding: 12px 40px;
-    font-size: 1.25rem;
+    background: #7c3aed;
+    padding: 0.75rem 2rem;
     border-radius: 9999px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: 600;
+    transition: background 0.3s ease;
 }
 
 .btn-cta:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: #6d28d9;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { font-size: 1.2rem; }
-    .btn-cta { padding: 10px 30px; font-size: 1rem; }
+    /* Navigation */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    nav .space-x-4 {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav .space-x-4 a {
+        font-size: 1rem;
+    }
+
+    /* Homepage */
+    section {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Smaller heading on mobile */
+    }
+
+    p {
+        font-size: 1rem; /* Smaller paragraph on mobile */
+    }
+
+    .btn-cta {
+        padding: 0.5rem 1.5rem; /* Smaller button on mobile */
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; /* Even smaller for very small screens */
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .btn-cta {
+        padding: 0.5rem 1rem;
+    }
 }

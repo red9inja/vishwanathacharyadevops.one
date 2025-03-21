@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Home - Vishwanathacharya{% endblock %}
 {% block content %}
-    <section class="hero">
-        <div>
-            <h1 class="text-indigo-300">Vishwanathacharya</h1>
-            <p class="mt-4 text-gray-300">DevOps Expert | Automating Success, Optimizing Futures</p>
-            <a href="{{ url_for('signup') }}" class="btn-cta mt-6 inline-block text-white">Hire Me</a>
-        </div>
+    <section class="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] text-center px-4">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Vishwanathacharya</h1>
+        <p class="text-lg md:text-xl mb-8">DevOps Expert | Automating Success, Optimizing Futures</p>
+        <a href="mailto:your-email@example.com" class="btn-cta">Hire Me</a>
     </section>
 {% endblock %}

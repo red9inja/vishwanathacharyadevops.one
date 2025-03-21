@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Dashboard - Vishwanathacharya{% endblock %}
 {% block content %}
-    <section class="py-16">
-        <h1 class="text-4xl font-bold text-indigo-300 mb-6 text-center">Welcome, {{ user.username }}!</h1>
+    <section class="py-8 px-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-indigo-300 mb-6 text-center">Welcome, {{ user.username }}!</h1>
         <p class="text-center text-gray-300 mb-8">Create and view your posts below.</p>
 
         <!-- Form to create a new post -->
-        <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-semibold text-indigo-300 mb-4">Create a Post</h2>
+        <div class="max-w-2xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold text-indigo-300 mb-4">Create a Post</h2>
             <form method="POST">
                 <div class="mb-4">
                     <textarea name="content" class="w-full p-3 rounded-lg bg-gray-700 text-white border-none focus:ring-2 focus:ring-indigo-500" rows="4" placeholder="What's on your mind?" required></textarea>
@@ -18,10 +18,10 @@
 
         <!-- List of user's posts -->
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-2xl font-semibold text-indigo-300 mb-4">Your Posts</h2>
+            <h2 class="text-xl md:text-2xl font-semibold text-indigo-300 mb-4">Your Posts</h2>
             {% if posts %}
                 {% for post in posts %}
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-4">
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
                         <p class="text-gray-300">{{ post.content }}</p>
                     </div>
                 {% endfor %}
