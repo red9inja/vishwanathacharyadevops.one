@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Admin - Vishwanathacharya{% endblock %}
+{% block content %}
+    <section class="py-16">
+        <h1 class="text-4xl font-bold text-indigo-300 mb-6 text-center">Admin Dashboard</h1>
+        <p class="text-center text-gray-300 mb-8">Welcome, {{ session['username'] }}!</p>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold text-indigo-300 mb-4">User Management</h2>
+            <table class="w-full text-left text-gray-300">
+                <thead>
+                    <tr class="bg-gray-700">
+                        <th class="p-3">ID</th>
+                        <th class="p-3">Username</th>
+                        <th class="p-3">Email</th>
+                        <th class="p-3">Admin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr class="border-t border-gray-700">
+                            <td class="p-3">{{ user.id }}</td>
+                            <td class="p-3">{{ user.username }}</td>
+                            <td class="p-3">{{ user.email }}</td>
+                            <td class="p-3">{{ 'Yes' if user.is_admin else 'No' }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}
